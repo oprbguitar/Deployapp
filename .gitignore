@@ -1,0 +1,5 @@
+# Build/distribution artifacts
+/dist/*.zip
+
+# OS/editor noise
+.DS_Store
