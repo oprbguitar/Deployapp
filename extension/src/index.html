@@ -8,12 +8,15 @@
   </head>
   <body>
     <header>
+      <h1>DeployApp Diagram Studio</h1>
+      <p class="sub">Click en la extensión anclada para abrir esta vista. Arrastra archivos y edita con preview en vivo.</p>
       <h1>DeployApp Diagram Studio (MVP)</h1>
       <div class="toolbar">
         <label class="button">
           Cargar archivos
           <input id="fileInput" type="file" multiple />
         </label>
+        <button id="toggleFocus">Vista extendida</button>
         <button id="saveWorkspace">Guardar workspace</button>
         <button id="loadWorkspace">Cargar workspace</button>
         <button id="downloadJson">Descargar JSON</button>
@@ -29,6 +32,23 @@
       </section>
       <div id="resizer" aria-label="redimensionar"></div>
       <section id="rightPane">
+        <h2>Editor + preview en vivo</h2>
+        <div id="emptyState">Selecciona un archivo para editar y previsualizar.</div>
+        <div id="editorArea" class="hidden">
+          <div class="editor-preview-grid">
+            <section class="panel editor-panel">
+              <label for="editor">Editor</label>
+              <textarea id="editor" spellcheck="false"></textarea>
+            </section>
+            <section class="panel preview-panel">
+              <label>Live Preview</label>
+              <article id="livePreview" class="markdown-preview"></article>
+            </section>
+          </div>
+          <p class="hint">Markdown (`.md`) se renderiza con tablas/listas/títulos. Mermaid (`.mmd/.mermaid`) se renderiza como imagen.</p>
+        </div>
+
+        <h3>Preview paralelo</h3>
         <h2>Preview paralelo</h2>
         <div id="previewGrid"></div>
       </section>
@@ -36,6 +56,9 @@
 
     <template id="previewTemplate">
       <article class="preview-card">
+        <h4></h4>
+        <p class="meta"></p>
+        <div class="render"></div>
         <h3></h3>
         <p class="meta"></p>
         <pre></pre>
