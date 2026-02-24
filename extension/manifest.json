@@ -3,6 +3,7 @@
   "name": "DeployApp Diagram Studio",
   "description": "Offline viewer para formatos mixtos de diagramas con live preview.",
   "version": "0.2.0",
+  "version": "0.1.0",
   "permissions": ["storage"],
   "action": {
     "default_title": "DeployApp Diagram Studio"
