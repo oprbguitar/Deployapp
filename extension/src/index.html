@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeployApp Diagram Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DeployApp Diagram Studio (MVP)</h1>
+      <div class="toolbar">
+        <label class="button">
+          Cargar archivos
+          <input id="fileInput" type="file" multiple />
+        </label>
+        <button id="saveWorkspace">Guardar workspace</button>
+        <button id="loadWorkspace">Cargar workspace</button>
+        <button id="downloadJson">Descargar JSON</button>
+        <button id="downloadImage">Descargar imagen</button>
+      </div>
+    </header>
+
+    <main id="layout">
+      <section id="leftPane">
+        <h2>Archivos</h2>
+        <div id="dropZone">Arrastra y suelta aquí</div>
+        <ul id="fileList"></ul>
+      </section>
+      <div id="resizer" aria-label="redimensionar"></div>
+      <section id="rightPane">
+        <h2>Preview paralelo</h2>
+        <div id="previewGrid"></div>
+      </section>
+    </main>
+
+    <template id="previewTemplate">
+      <article class="preview-card">
+        <h3></h3>
+        <p class="meta"></p>
+        <pre></pre>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
