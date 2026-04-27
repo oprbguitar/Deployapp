@@ -2,6 +2,8 @@
 
 Aplicación web en **HTML + CSS + JavaScript** usando **Three.js** para visualizar imágenes panorámicas equirectangulares (relación aproximada **2:1**) en escritorio y móvil.
 
+🌐 **Enlace en vivo:** [https://oprbguitar.github.io/Deployapp/](https://oprbguitar.github.io/Deployapp/)
+
 ## Requisitos
 
 - Node.js 18+
@@ -9,12 +11,24 @@ Aplicación web en **HTML + CSS + JavaScript** usando **Three.js** para visualiz
 
 ## Ejecutar en local
 
+Primero, asegúrate de estar dentro de la carpeta del proyecto:
+
 ```bash
+cd Deployapp
 npm install
 npm run dev
 ```
 
 Luego abre la URL que Vite muestre en consola (por ejemplo `http://localhost:5173`).
+
+## Despliegue en GitHub Pages
+
+Para actualizar la versión en línea luego de hacer cambios en el código, simplemente ejecuta:
+
+```bash
+npm run deploy
+```
+Esto construirá la aplicación y la publicará automáticamente en la rama `gh-pages`.
 
 ## Funcionalidades incluidas
 

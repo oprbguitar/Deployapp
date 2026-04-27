@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visor Panorámico 360°</title>
+    <script type="module" crossorigin src="/Deployapp/assets/index-ZWelzM7g.js"></script>
+    <link rel="stylesheet" crossorigin href="/Deployapp/assets/index-D8F-NaT5.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="viewer" class="viewer" aria-label="Visor panorámico"></section>
+
+      <section id="welcomeScreen" class="overlay welcome-overlay">
+        <div class="panel">
+          <p class="eyebrow">Visor panorámico profesional</p>
+          <h1>Explora imágenes 360° equirectangulares</h1>
+          <p>
+            Carga una imagen local en formato <strong>JPG</strong>, <strong>PNG</strong> o
+            <strong>WebP</strong> con proporción aproximada <strong>2:1</strong>.
+          </p>
+
+          <label for="fileInput" class="btn btn-primary">Cargar imagen</label>
+          <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" hidden />
+        </div>
+      </section>
+
+      <div id="loadingIndicator" class="overlay loading-overlay hidden" role="status" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Cargando panorama…</p>
+      </div>
+
+      <section id="controlsPanel" class="controls hidden" aria-label="Controles del visor">
+        <button id="loadBtn" class="btn">Abrir imagen</button>
+        <button id="resetBtn" class="btn">Reset vista</button>
+        <button id="fullscreenBtn" class="btn">Pantalla completa</button>
+      </section>
+
+      <div id="toast" class="toast hidden" aria-live="assertive"></div>
+    </main>
+
+  </body>
+</html>
