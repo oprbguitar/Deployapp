@@ -1,31 +1,41 @@
-# DeployApp Diagram Studio (MVP)
+# Visor panorámico 360° (equirectangular)
 
-Inicio de proyecto para una extensión Chrome offline que permite:
+Aplicación web en **HTML + CSS + JavaScript** usando **Three.js** para visualizar imágenes panorámicas equirectangulares (relación aproximada **2:1**) en escritorio y móvil.
 
-- Arrastrar/soltar archivos mixtos de diagramas.
-- Detectar tipo por extensión.
-- Visualización paralela ajustable en paneles.
-- Guardar/cargar workspace localmente.
-- Exportar selección a JSON e imagen PNG.
+## Requisitos
 
-## Cargar en Chrome
+- Node.js 18+
+- npm 9+
 
-1. Ir a `chrome://extensions`.
-2. Activar **Developer mode**.
-3. Click en **Load unpacked**.
-4. Seleccionar la carpeta `extension/`.
-5. Abrir opciones de la extensión para usar la app.
-
-## Enlace de descarga
-
-Genera el paquete ZIP con:
+## Ejecutar en local
 
 ```bash
-./scripts/package-extension.sh
+npm install
+npm run dev
 ```
 
-Archivo generado localmente (no versionado en Git):
+Luego abre la URL que Vite muestre en consola (por ejemplo `http://localhost:5173`).
 
-- `dist/deployapp-diagram-studio-mvp.zip`
+## Funcionalidades incluidas
 
-> Nota: el ZIP se excluye del repositorio para evitar errores de PR con archivos binarios; súbelo como *release asset* o a tu almacenamiento para compartir enlace de descarga.
+- Pantalla inicial con botón para cargar imagen local.
+- Soporte para JPG, PNG y WebP.
+- Render 360° dentro de esfera invertida.
+- Controles:
+  - Mouse drag para mirar.
+  - Rueda para zoom.
+  - Arrastre táctil y pinch zoom (dos dedos).
+- Botón de pantalla completa.
+- Botón de reset de vista.
+- Indicador de carga.
+- Validación de proporción 2:1 con advertencia y opción de continuar.
+- Diseño oscuro tipo visor profesional.
+- Ajuste automático al redimensionar ventana.
+
+## TODO (mejoras futuras)
+
+- Soporte VR/WebXR.
+- Hotspots interactivos.
+- Mini mapa.
+- Galería de panoramas.
+- Exportar capturas.
