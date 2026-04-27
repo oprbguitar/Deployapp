@@ -1,4 +1,9 @@
+# Dependencies
+node_modules/
+package-lock.json
+
 # Build/distribution artifacts
+dist/
 /dist/*.zip
 
 # OS/editor noise
