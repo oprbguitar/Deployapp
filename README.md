@@ -1,55 +1,27 @@
-# Visor panorámico 360° (equirectangular)
+# Stargate SG-1 Technical Dossier (Static)
 
-Aplicación web en **HTML + CSS + JavaScript** usando **Three.js** para visualizar imágenes panorámicas equirectangulares (relación aproximada **2:1**) en escritorio y móvil.
+Sitio estático con Vite + React + TypeScript, diseñado para GitHub Pages.
 
-🌐 **Enlace en vivo:** [https://oprbguitar.github.io/Deployapp/](https://oprbguitar.github.io/Deployapp/)
+## Comandos
+- `npm ci` instalar
+- `npm run dev` desarrollo
+- `npm run build` compilación estática en `dist/`
+- `npm run preview` vista previa local del build
 
-## Requisitos
+## GitHub Pages
+1. Ajusta `base` en `vite.config.ts` a `/<NOMBRE_REPO>/`.
+2. Activa GitHub Pages (Source: GitHub Actions).
+3. El workflow `.github/workflows/deploy.yml` ejecuta:
+   - `npm ci`
+   - `npm run build`
+   - publica `dist`
 
-- Node.js 18+
-- npm 9+
+## Imágenes
+- Placeholders en `public/images/placeholders/`.
+- Reemplaza manualmente cada archivo y actualiza metadatos (`credit`, `license`, `sourceUrl`) en `src/data/races.ts`.
+- No usar hotlinking no autorizado.
 
-## Ejecutar en local
-
-Primero, asegúrate de estar dentro de la carpeta del proyecto:
-
-```bash
-cd Deployapp
-npm install
-npm run dev
-```
-
-Luego abre la URL que Vite muestre en consola (por ejemplo `http://localhost:5173`).
-
-## Despliegue en GitHub Pages
-
-Para actualizar la versión en línea luego de hacer cambios en el código, simplemente ejecuta:
-
-```bash
-npm run deploy
-```
-Esto construirá la aplicación y la publicará automáticamente en la rama `gh-pages`.
-
-## Funcionalidades incluidas
-
-- Pantalla inicial con botón para cargar imagen local.
-- Soporte para JPG, PNG y WebP.
-- Render 360° dentro de esfera invertida.
-- Controles:
-  - Mouse drag para mirar.
-  - Rueda para zoom.
-  - Arrastre táctil y pinch zoom (dos dedos).
-- Botón de pantalla completa.
-- Botón de reset de vista.
-- Indicador de carga.
-- Validación de proporción 2:1 con advertencia y opción de continuar.
-- Diseño oscuro tipo visor profesional.
-- Ajuste automático al redimensionar ventana.
-
-## TODO (mejoras futuras)
-
-- Soporte VR/WebXR.
-- Hotspots interactivos.
-- Mini mapa.
-- Galería de panoramas.
-- Exportar capturas.
+## Agregar nuevas razas
+1. Añade un objeto al arreglo `races` en `src/data/races.ts`.
+2. Completa campos de canon y episodios.
+3. Agrega placeholder en `public/images/placeholders/`.
